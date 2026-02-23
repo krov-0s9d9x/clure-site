@@ -15,7 +15,7 @@ export default function Home({ page, articles = [] }) {
       </Head>
       <Navigation />
       <Hero />
-      <main>
+      <main style={{ background: '#87c1d3', paddingBottom: 10 }}>
         <ArticlesList items={articles} />
       </main>
       <Footer />
