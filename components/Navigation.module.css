@@ -1,0 +1,56 @@
+/* Fixed vertical nav overlay in top-left of viewport */
+.nav {
+  position: fixed;
+  top: 14px;
+  left: 20px;
+  z-index: 100;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+.item {
+  display: block;
+  padding: 10px 12px;
+  background: #ffffff;
+  color: #0f0e0e;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'ss01', 'ss03';
+  white-space: nowrap;
+  transition: background 120ms ease;
+}
+
+.item:hover {
+  background: #f0f0f0;
+}
+
+/* Mobile: compact horizontal row, centered */
+@media (max-width: 767px) {
+  .nav {
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .list {
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+  }
+  .item {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}

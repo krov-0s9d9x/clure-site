@@ -1,0 +1,71 @@
+/* ─── Filter bar ─── */
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 16px 20px;
+  background: #87c1d3;
+  align-items: center;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  all: unset;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: background 120ms ease, color 120ms ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.pill.active {
+  background: #ffffff;
+  color: #0f0e0e;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 600px) {
+  .bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .pill {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .label {
+    font-size: 14px;
+  }
+}

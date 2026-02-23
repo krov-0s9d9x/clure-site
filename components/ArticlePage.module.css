@@ -1,0 +1,335 @@
+/* ─── Article page – matches /article Figma frame ─── */
+
+/* Whole page wrapper – solid accent background */
+.page {
+  background: #87c1d3;
+  min-height: 100vh;
+}
+
+/* Body container – flex column with 10px gaps between sections */
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* ─── Header section ─── */
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 264px 30px 160px;
+  color: var(--color-white);
+  border-radius: 8px;
+  gap: 97px;
+}
+
+.articleTitle {
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 0.95;
+  letter-spacing: -4.4px;
+  color: var(--color-white);
+  max-width: 1200px;
+  word-break: break-word;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-style: italic;
+  font-size: 80px;
+  line-height: 0.9;
+  letter-spacing: -1.6px;
+  color: var(--color-white);
+}
+
+/* ─── Hero image ─── */
+.heroImage {
+  width: 100%;
+  height: 700px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ─── Intro section ─── */
+.intro {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 70px 40px 74px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: var(--color-white);
+  font-feature-settings: 'ss01', 'ss03';
+}
+
+.introLabel {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.introText {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── Article body section ─── */
+.articleSection {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 83px 10px 120px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.articleContent {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.richText {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: #ffffff;
+  text-align: justify;
+  font-feature-settings: 'ss01', 'ss03';
+  white-space: pre-wrap;
+}
+
+.richText p {
+  margin: 0;
+}
+
+/* Blank spacer between paragraphs */
+.richText p + p {
+  margin-top: 0;
+}
+
+.richText a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ─── "Больше статей" section ─── */
+.moreSection {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 40px;
+  background: #71b6cc;
+  border-radius: 8px;
+}
+
+.moreLabel {
+  flex-shrink: 0;
+  width: 199px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.48px;
+  color: var(--color-white);
+}
+
+.moreList {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Single "more" article card */
+.moreCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.moreCardImage {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.moreCardImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.moreCardContent {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  font-feature-settings: 'ss01', 'ss03';
+}
+
+.moreCardTitle {
+  color: var(--color-white);
+  word-break: break-word;
+}
+
+.moreCardMeta {
+  display: flex;
+  gap: 4px;
+  color: #c8f3ff;
+}
+
+/* ─── Responsive – Tablet ─── */
+@media (max-width: 1024px) {
+  .articleTitle {
+    font-size: clamp(48px, 10vw, 90px);
+    letter-spacing: -2px;
+  }
+
+  .metaRow {
+    font-size: clamp(36px, 7vw, 60px);
+    gap: 16px;
+  }
+
+  .heroImage {
+    height: 600px;
+  }
+
+  .intro {
+    padding: 120px 40px;
+  }
+
+  .introText {
+    min-width: 200px;
+  }
+
+  .articleContent {
+    max-width: 620px;
+  }
+
+  .moreSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .moreLabel {
+    width: auto;
+    text-align: center;
+  }
+
+  .moreCardImage {
+    height: 340px;
+  }
+}
+
+/* ─── Responsive – Mobile ─── */
+@media (max-width: 600px) {
+  .header {
+    padding: 96px 0 40px;
+    gap: 32px;
+  }
+
+  .articleTitle {
+    font-size: clamp(28px, 9vw, 48px);
+    letter-spacing: -1px;
+  }
+
+  .metaRow {
+    font-size: clamp(18px, 5vw, 30px);
+    gap: 8px;
+    letter-spacing: -0.6px;
+  }
+
+  .heroImage {
+    height: 320px;
+  }
+
+  .intro {
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+  }
+
+  .introLabel {
+    width: auto;
+  }
+
+  .introText {
+    font-size: 16px;
+  }
+
+  .articleSection {
+    padding: 40px 20px 80px;
+  }
+
+  .articleContent {
+    max-width: 100%;
+  }
+
+  .richText {
+    font-size: 16px;
+  }
+
+  .moreSection {
+    flex-direction: column;
+    padding: 64px 10px;
+    gap: 16px;
+  }
+
+  .moreList {
+    flex-direction: column;
+  }
+
+  .moreCardImage {
+    height: 280px;
+  }
+
+  .moreCardContent {
+    font-size: 16px;
+  }
+}

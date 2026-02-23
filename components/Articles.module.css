@@ -1,0 +1,219 @@
+/* ─── Article grid wrapper ─── */
+.wrapper {
+  width: 100%;
+  background: #87c1d3;
+}
+
+/* 2-column full-bleed grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Single card: center it with landscape ratio */
+.grid:has(> :only-child) {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.grid:has(> :only-child) .card {
+  aspect-ratio: 1 / 1;
+}
+
+/* ─── Article card ─── */
+.card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #c8dde5;
+}
+
+.cardLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Full-bleed cover image */
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: filter 300ms ease, transform 300ms ease;
+}
+
+/* Hover: blur + slight zoom */
+.card:hover .image {
+  filter: blur(12px);
+  transform: scale(1.04);
+}
+
+.imagePlaceholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #9fd1de 0%, #7fbacd 100%);
+}
+
+/* Gradient scrim before content */
+.gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
+/* White content box at the bottom */
+.content {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background: #ffffff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0;
+  height: 80px;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #0f0e0e;
+  font-feature-settings: 'ss01', 'ss03';
+  word-break: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #0f0e0e;
+  font-feature-settings: 'ss01', 'ss03';
+}
+
+.dot {
+  flex-shrink: 0;
+}
+
+/* Author name in meta row */
+.author {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #0f0e0e;
+  font-feature-settings: 'ss01', 'ss03';
+}
+
+.authorLink {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #0f0e0e;
+  font-feature-settings: 'ss01', 'ss03';
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+.authorLink:hover {
+  text-decoration: underline;
+}
+
+/* ─── "Все статьи" button ─── */
+.allButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 24px;
+  margin-top: 10px;
+  background: #7fbacd;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+  color: #f6f8fb;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(40px, 5.5vw, 80px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-align: center;
+  font-feature-settings: 'ss01', 'ss03';
+  transition: background 120ms ease, color 120ms ease;
+  box-sizing: border-box;
+}
+
+.allButton:hover {
+  background: #f6f8fb;
+  color: #7fbacd;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 6px 6px 0;
+  }
+  .card {
+    aspect-ratio: 5 / 4;
+  }
+  .card:only-child {
+    aspect-ratio: 5 / 4;
+    max-width: 100%;
+  }
+  .content {
+    height: auto;
+    min-height: 56px;
+    padding: 8px 12px;
+  }
+  .title, .meta, .author {
+    font-size: 14px;
+  }
+  .allButton {
+    font-size: clamp(32px, 9vw, 56px);
+    padding: 24px 16px;
+    margin-top: 6px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .card {
+    aspect-ratio: 4 / 5;
+  }
+  .title, .meta, .author {
+    font-size: 17px;
+  }
+}

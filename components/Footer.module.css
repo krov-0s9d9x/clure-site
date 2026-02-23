@@ -1,0 +1,129 @@
+/* Footer: blurred image bg, large brand left, link columns right */
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 314px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ─── Blurred background ─── */
+.bg {
+  position: absolute;
+  inset: -60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: blur(25px);
+  display: block;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 12, 83, 0.15);
+}
+
+/* ─── Content layer ─── */
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px 10px 24px;
+  gap: 20px;
+}
+
+/* "Clure." brand */
+.brand {
+  font-family: var(--font-display);
+  font-size: clamp(60px, 14vw, 200px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: #f6f8fb;
+  font-variation-settings: 'XROT' 0, 'YROT' 0;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Link columns wrapper */
+.links {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  padding-bottom: 4px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 120px;
+}
+
+/* "ссылки" / "связь" label tag */
+.label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f6f8fb;
+  border: 1px solid rgba(246,248,251,0.5);
+  border-radius: 100px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  width: fit-content;
+  text-transform: lowercase;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.list li a {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f6f8fb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.list li a:hover {
+  opacity: 0.75;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 12px 20px;
+  }
+  .links {
+    gap: 32px;
+  }
+  .brand {
+    font-size: clamp(52px, 18vw, 100px);
+  }
+  .list li a {
+    font-size: 15px;
+  }
+}
+
