@@ -27,7 +27,7 @@
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 32px 40px;
+  padding: 32px 40px 40px;
   background: rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
@@ -51,6 +51,7 @@
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 0 0 18px;
+  text-align: center;
 }
 
 .text {
@@ -61,6 +62,23 @@
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.85);
   margin: 0 0 16px;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.boxedNote {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-top: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text:last-child {
@@ -78,25 +96,39 @@
   opacity: 0.7;
 }
 
+.contentGap {
+  margin-top: 10px;
+}
+
 /* ─── Authors grid ─── */
+ .authorsWrapper {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 12px;
+}
+
 .authors {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 16px;
 }
 
 .authorCard {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.1);
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
   transition: background 120ms ease;
 }
 
 .authorCard:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .authorAvatar {
@@ -120,8 +152,11 @@
   .wrapper {
     padding: 6px;
   }
+  .contentGap {
+    margin-top: 6px;
+  }
   .content {
-    padding: 36px 16px 48px;
+    padding: 36px 16px 16px;
   }
   .heading {
     font-size: 24px;
@@ -131,7 +166,7 @@
     line-height: 1.6;
   }
   .authors {
-    gap: 10px;
+    gap: 12px;
   }
   .authorCard {
     flex: 1 1 100%;

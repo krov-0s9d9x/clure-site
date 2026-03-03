@@ -39,6 +39,7 @@ export default function PlaylistsPage({ playlists = [] }) {
               target="_blank"
               rel="noopener noreferrer"
               className={s.item}
+              style={{ border: '1px solid rgba(255, 255, 255, 0.2)', borderRadius: 16 }}
             >
               <div className={s.info}>
                 <span className={s.title}>{p.title}</span>
@@ -48,10 +49,12 @@ export default function PlaylistsPage({ playlists = [] }) {
                   </span>
                 )}
               </div>
-              {p.platform && PLATFORM_LABELS[p.platform] && (
-                <span className={s.platform}>{PLATFORM_LABELS[p.platform]}</span>
-              )}
-              <span className={s.arrow}>→</span>
+              <div className={s.itemSuffix}>
+                {p.platform && PLATFORM_LABELS[p.platform] && (
+                  <span className={s.platform}>{PLATFORM_LABELS[p.platform]}</span>
+                )}
+                <span className={s.arrow}>→</span>
+              </div>
             </a>
           ))}
         </div>

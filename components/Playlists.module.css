@@ -2,7 +2,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 10px;
   padding: 0 10px 10px;
   background: #87c1d3;
 }
@@ -17,6 +17,12 @@
   text-decoration: none;
   color: #ffffff;
   transition: background 120ms ease;
+}
+
+.itemSuffix {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .item:hover {
@@ -88,6 +94,7 @@
 /* ─── Mobile ─── */
 @media (max-width: 600px) {
   .list {
+    gap: 6px;
     padding: 0 6px 6px;
   }
   .item {
@@ -106,6 +113,10 @@
   }
   .platform {
     font-size: 12px;
+  }
+  .itemSuffix {
+    width: 100%;
+    justify-content: space-between;
   }
   .empty {
     padding: 48px 16px;

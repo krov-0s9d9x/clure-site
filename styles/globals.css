@@ -16,6 +16,10 @@ html, body, #__next {
   height: 100%;
 }
 
+html {
+  background: #87c1d3;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);

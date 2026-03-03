@@ -31,6 +31,7 @@
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: #c8dde5;
+  box-shadow: 0 4px 16px rgba(100, 170, 200, 0.35);
 }
 
 .cardLink {
@@ -90,7 +91,7 @@
   min-height: 68px;
   box-sizing: border-box;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .title {
@@ -157,7 +158,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 10px auto 0;
+  margin: 10px auto 10px;
   padding: 28px 0;
   background: rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -208,7 +209,7 @@
   .allButton {
     font-size: clamp(32px, 9vw, 56px);
     padding: 24px 16px;
-    margin-top: 4px;
+    margin: 6px auto 6px;
   }
 }
 

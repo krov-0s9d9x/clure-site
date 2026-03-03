@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from './Footer.module.css'
 
 const BG_URL = '/images/bg.png'
@@ -13,7 +14,9 @@ export default function Footer() {
 
       {/* Content */}
       <div className={styles.inner}>
-        <p className={styles.brand}>Clure.</p>
+        <Link href="/" className={styles.brand} aria-label="Clure home">
+          Clure.
+        </Link>
 
         <div className={styles.links}>
           <div className={styles.col}>

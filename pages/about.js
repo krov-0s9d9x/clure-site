@@ -33,21 +33,21 @@ export default function AboutPage({ authors = [] }) {
           <p className={s.lead}>
             Clure - это творческое музыкальное объединение, возникшее в Москве в 2025 году.
           </p>
-          <p className={s.text}>
+          <p className={`${s.text} ${s.textCenter}`}>
             Мы<br />
             организовываем концерты<br />
             пишем статьи<br />
             собираем плейлисты<br />
             снимаем живые выступления<br />
-            любим музыку.
+            любим музыку
           </p>
-          <p className={s.text}>
-            Designed, assembled, and made in moscow.
+          <p className={`${s.text} ${s.boxedNote}`}>
+            designed, assembled, and made in moscow
           </p>
         </div>
 
         {authors.length > 0 && (
-          <div className={s.content} style={{ marginTop: 10 }}>
+          <div className={`${s.content} ${s.contentGap}`}>
             <h2 className={s.heading}>MEET THE TEAM</h2>
             <div className={s.authors}>
               {authors.map((a) => {
