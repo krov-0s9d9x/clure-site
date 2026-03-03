@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import styles from './Articles.module.css'
 import urlFor from '../lib/imageUrl'
 import slugify from '../lib/slugify'
@@ -40,17 +41,13 @@ export default function ArticleCard({ title = 'Article title', image = null, slu
         <span className={styles.title}>{title}</span>
         <span className={styles.meta}>
           {authorName && (
-            <a
+            <Link
               href={`/authors/${authorSlug}`}
               className={styles.authorLink}
-              onClick={(e) => {
-                e.stopPropagation()
-                e.preventDefault()
-                router.push(`/authors/${authorSlug}`)
-              }}
+              onClick={(e) => e.stopPropagation()}
             >
               {authorName}
-            </a>
+            </Link>
           )}
           {authorName && date && <span className={styles.dot}>·</span>}
           {date && <span>{date}</span>}

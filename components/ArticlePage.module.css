@@ -399,9 +399,10 @@
 }
 
 .authorBio {
-  font-family: var(--font-sans);
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-style: italic;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
   color: rgba(246, 248, 251, 0.85);
   letter-spacing: -0.3px;

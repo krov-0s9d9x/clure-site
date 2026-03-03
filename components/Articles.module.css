@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 10px 24px 0;
+  padding: 10px 0 0;
 }
 
 /* Single card: center it with landscape ratio */
@@ -142,7 +142,9 @@
   color: #f6f8fb;
   text-decoration: none;
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .authorLink:hover {

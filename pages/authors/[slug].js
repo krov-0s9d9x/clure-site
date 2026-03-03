@@ -121,20 +121,12 @@ export default function AuthorPage({ author, articles = [], playlistCount = 0, p
           </div>
         </header>
 
-        <main className={styles.body}>
+        {/* ── Author's articles (full-width, same as home) ── */}
+        {articles.length > 0 && (
+          <ArticlesList items={articles} max={100} showAllButton={false} />
+        )}
 
-          {/* ── Author's articles ── */}
-          {articles.length > 0 && (
-            <section style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-            }}>
-              <div style={{ width: '100%', maxWidth: 900 }}>
-                <ArticlesList items={articles} max={100} showAllButton={false} />
-              </div>
-            </section>
-          )}
+        <main className={styles.body} style={{ paddingTop: 24 }}>
 
           {/* ── Author's playlists ── */}
           {playlists.length > 0 && (
@@ -173,7 +165,9 @@ export default function AuthorPage({ author, articles = [], playlistCount = 0, p
         </main>
       </div>
 
-      <Footer />
+      <div style={{ marginTop: -2 }}>
+        <Footer />
+      </div>
     </>
   )
 }
