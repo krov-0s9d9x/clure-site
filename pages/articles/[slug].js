@@ -34,25 +34,32 @@ function formatShortDate(dateStr) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await client.fetch(`*[_type == "article" && defined(slug.current)]{ "slug": slug.current }`)
-  const paths = (slugs || []).map((s) => ({ params: { slug: s.slug } }))
-  return { paths, fallback: 'blocking' }
+  try {
+    const slugs = await client.fetch(`*[_type == "article" && defined(slug.current)]{ "slug": slug.current }`)
+    const paths = (slugs || []).map((s) => ({ params: { slug: s.slug } }))
+    return { paths, fallback: false }
+  } catch (e) {
+    return { paths: [], fallback: false }
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const slug = params.slug
-  const [article, moreArticles] = await Promise.all([
-    client.fetch(queryBySlug, { slug }),
-    client.fetch(queryMore, { slug }),
-  ])
+  try {
+    const slug = params.slug
+    const [article, moreArticles] = await Promise.all([
+      client.fetch(queryBySlug, { slug }),
+      client.fetch(queryMore, { slug }),
+    ])
 
-  if (!article) {
-    return { notFound: true, revalidate: 60 }
-  }
+    if (!article) {
+      return { notFound: true }
+    }
 
-  return {
-    props: { article, moreArticles: moreArticles || [] },
-    revalidate: 60,
+    return {
+      props: { article, moreArticles: moreArticles || [] },
+    }
+  } catch (e) {
+    return { notFound: true }
   }
 }
 

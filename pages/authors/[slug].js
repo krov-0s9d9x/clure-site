@@ -29,27 +29,34 @@ const queryPlaylistsByAuthor = `*[_type == "playlist" && author._ref == $authorI
 }`
 
 export async function getStaticPaths() {
-  const authors = await client.fetch(queryAllAuthors)
-  const paths = (authors || []).map((a) => ({ params: { slug: slugify(a.name) } }))
-  return { paths, fallback: 'blocking' }
+  try {
+    const authors = await client.fetch(queryAllAuthors)
+    const paths = (authors || []).map((a) => ({ params: { slug: slugify(a.name) } }))
+    return { paths, fallback: false }
+  } catch (e) {
+    return { paths: [], fallback: false }
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const urlSlug = params.slug
-  const allAuthors = await client.fetch(queryAllAuthors)
-  const author = (allAuthors || []).find((a) => slugify(a.name) === urlSlug) || null
+  try {
+    const urlSlug = params.slug
+    const allAuthors = await client.fetch(queryAllAuthors)
+    const author = (allAuthors || []).find((a) => slugify(a.name) === urlSlug) || null
 
-  if (!author) {
-    return { notFound: true, revalidate: 60 }
-  }
+    if (!author) {
+      return { notFound: true }
+    }
 
-  const articles = await client.fetch(queryArticlesByAuthor, { authorId: author._id })
-  const playlistCount = await client.fetch(queryPlaylistCount, { authorId: author._id })
-  const playlists = await client.fetch(queryPlaylistsByAuthor, { authorId: author._id })
+    const articles = await client.fetch(queryArticlesByAuthor, { authorId: author._id })
+    const playlistCount = await client.fetch(queryPlaylistCount, { authorId: author._id })
+    const playlists = await client.fetch(queryPlaylistsByAuthor, { authorId: author._id })
 
-  return {
-    props: { author, articles: articles || [], playlistCount: playlistCount || 0, playlists: playlists || [] },
-    revalidate: 60,
+    return {
+      props: { author, articles: articles || [], playlistCount: playlistCount || 0, playlists: playlists || [] },
+    }
+  } catch (e) {
+    return { notFound: true }
   }
 }
 
