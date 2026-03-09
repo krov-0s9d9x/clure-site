@@ -14,6 +14,7 @@ const AUTHOR_NAV = [
   { href: '/articles', label: 'Статьи' },
   { href: '/playlists', label: 'Плейлисты' },
   { href: '/about', label: 'О нас' },
+  { href: '/theory-fest', label: 'Theory Fest' },
 ]
 
 const queryAllAuthors = `*[_type == "author"]{ _id, name, bio, image, spotify }`

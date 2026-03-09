@@ -4,12 +4,6 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import styles from '../components/TheoryFest.module.css'
 
-const NAV_LINKS = [
-  { href: '/', label: 'Главная' },
-  { href: '/articles', label: 'Статьи' },
-  { href: '/playlists', label: 'Плейлисты' },
-  { href: '/about', label: 'О нас' },
-]
 
 export default function TheoryFestPage() {
   return (
@@ -38,7 +32,7 @@ export default function TheoryFestPage() {
       </Head>
 
       <div className={styles.page}>
-        <Navigation links={NAV_LINKS} accentColor="rgba(27, 64, 176, 0.75)" />
+        <Navigation accentColor="rgba(27, 64, 176, 0.75)" />
 
         <header className={styles.hero}>
           <h1 className={styles.title}>Clure Theory Fest</h1>

@@ -12,6 +12,7 @@ const ABOUT_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/articles', label: 'Статьи' },
   { href: '/playlists', label: 'Плейлисты' },
+  { href: '/theory-fest', label: 'Theory Fest' },
 ]
 
 const BG_URL = '/images/bg.png'

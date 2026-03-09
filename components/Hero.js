@@ -4,7 +4,7 @@ import styles from './Hero.module.css'
 
 const BG_URL = '/images/bg.png'
 
-export default function Hero({ title = 'Clure.', fontFamily, scrollTarget = 'articles' }) {
+export default function Hero({ title = 'Clure.', fontFamily, scrollTarget = 'articles', shortTitle = false, badgeLeft }) {
   const brandRef = useRef(null)
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function Hero({ title = 'Clure.', fontFamily, scrollTarget = 'art
             title
           )}
         </div>
-        <Link href="/theory-fest" className={styles.festBadge}>
+        <Link href="/theory-fest" className={`${styles.festBadge}${shortTitle ? ' ' + styles.festBadgeShortTitle : ''}`} style={badgeLeft ? { left: badgeLeft } : undefined}>
           <img src="/images/Banner.png" alt="Clure Theory Fest" className={styles.festBadgeImg} />
         </Link>
       </div>

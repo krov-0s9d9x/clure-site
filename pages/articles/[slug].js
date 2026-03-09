@@ -41,6 +41,7 @@ const ARTICLE_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/playlists', label: 'Плейлисты' },
   { href: '/about', label: 'О нас' },
+  { href: '/theory-fest', label: 'Theory Fest' },
 ]
 
 const queryBySlug = `*[_type == "article" && slug.current == $slug][0]{

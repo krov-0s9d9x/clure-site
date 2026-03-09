@@ -9,6 +9,7 @@ const PLAYLISTS_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/articles', label: 'Статьи' },
   { href: '/about', label: 'О нас' },
+  { href: '/theory-fest', label: 'Theory Fest' },
 ]
 
 const PLATFORM_LABELS = {
@@ -26,7 +27,7 @@ export default function PlaylistsPage({ playlists = [] }) {
         <title>Плейлисты — Clure</title>
       </Head>
       <Navigation links={PLAYLISTS_NAV} />
-      <Hero title="Плейлисты." fontFamily="sans" scrollTarget="playlists-content" />
+      <Hero title="Плейлисты." fontFamily="sans" scrollTarget="playlists-content" shortTitle />
 
       {playlists.length === 0 ? (
         <p className={s.empty}>Скоро здесь появятся плейлисты</p>

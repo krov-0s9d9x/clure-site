@@ -84,12 +84,18 @@
   position: absolute;
   bottom: 62%;
   left: 65%;
+  margin-left: 0;
   margin-bottom: 0;
   z-index: 2;
   text-decoration: none;
   display: block;
   line-height: 0;
   transform: rotate(20deg);
+}
+
+.festBadgeShortTitle {
+  left: 100%;
+  margin-left: -4.5em;
 }
 
 .festBadge:hover {

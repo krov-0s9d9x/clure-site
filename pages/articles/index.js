@@ -11,6 +11,7 @@ const ARTICLES_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/playlists', label: 'Плейлисты' },
   { href: '/about', label: 'О нас' },
+  { href: '/theory-fest', label: 'Theory Fest' },
 ]
 
 export default function ArticlesPage({ articles = [] }) {
@@ -42,7 +43,7 @@ export default function ArticlesPage({ articles = [] }) {
         <title>Статьи — Clure</title>
       </Head>
       <Navigation links={ARTICLES_NAV} />
-      <Hero title="Статьи." fontFamily="sans" scrollTarget="articles-filter" />
+      <Hero title="Статьи." fontFamily="sans" scrollTarget="articles-filter" badgeLeft="75%" />
 
       {/* ── Filters ── */}
       <div id="articles-filter" className={filterStyles.bar}>
