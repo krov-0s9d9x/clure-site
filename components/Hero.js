@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import styles from './Hero.module.css'
 
 const BG_URL = '/images/bg.png'
@@ -74,9 +75,9 @@ export default function Hero({ title = 'Clure.', fontFamily, scrollTarget = 'art
             title
           )}
         </div>
-        <a href="/theory-fest" className={styles.festBadge}>
+        <Link href="/theory-fest" className={styles.festBadge}>
           <img src="/images/Banner.png" alt="Clure Theory Fest" className={styles.festBadgeImg} />
-        </a>
+        </Link>
       </div>
     </section>
   )
