@@ -101,7 +101,7 @@
   font-family: 'Kenoky', 'Times New Roman', Georgia, serif;
   font-size: clamp(18px, 2.2vw, 34px);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0em;
   color: #1b40b0;
   margin-top: 3em;
   padding: 0 24px;
@@ -194,7 +194,7 @@
 }
 
 .papinySlesy {
-  font-family: Georgia, 'Times New Roman', serif;
+   font-family: Georgia, 'Times New Roman', serif;
   font-weight: bold;
   color: #1b40b0;
   font-size: 14cqi;
