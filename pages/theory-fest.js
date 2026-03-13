@@ -37,7 +37,9 @@ export default function TheoryFestPage() {
             <img src="/images/1-new.png" alt="" className={`${styles.tapePiece} ${styles.piece1}`} />
             <img src="/images/2.png" alt="" className={`${styles.tapePiece} ${styles.piece2}`} />
             <img src="/images/3.png" alt="" className={`${styles.tapePiece} ${styles.piece3}`} />
-            <img src="/images/4.png" alt="" className={`${styles.tapePiece} ${styles.piece4}`} />
+            <div className={`${styles.tapePiece} ${styles.piece4}`}>
+              <a href="https://t.me/papinyslezyiworldwide" target="_blank" rel="noopener noreferrer" className={styles.papinySlesy}>папины слёзы</a>
+            </div>
           </div>
         </header>
 
